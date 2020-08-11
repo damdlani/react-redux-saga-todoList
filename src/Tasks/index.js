@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
 
-const Tasks = ({tasks, hideDoneTasks}) => (
+const Tasks = ({tasks, hideDone}) => (
     <ul className="todo__ul ">
         {tasks.map((task) => (
             <li key={task.id}
-                className={`todo__task ${task.done && hideDoneTasks ? " todo__hidden" : ""}`}
+                className={`todo__task ${task.done && hideDone ? " todo__hidden" : ""}`}
             >
             <button className="todo__button todo__button--check ">
             {task.done ? <i className="fas fa-check"></i> : ""}

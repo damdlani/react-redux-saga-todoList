@@ -6,6 +6,6 @@ const Form = () => (
         <input className="form__input" autoFocus type="text" placeholder="Co jest do zrobienia?"/>
             <button className="form__submit ">Dodaj zadanie</button>
     </form>
-)
+);
 
 export default Form;
