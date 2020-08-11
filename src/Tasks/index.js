@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Tasks = ({tasks, hideDone, toggleTaskDone}) => (
+const Tasks = ({tasks, hideDone, toggleTaskDone, removeTask}) => (
     <ul className="todo__ul ">
         {tasks.map((task) => (
             <li key={task.id}
@@ -18,7 +18,10 @@ const Tasks = ({tasks, hideDone, toggleTaskDone}) => (
             {task.content}
             </span>
 
-            <button className="todo__button todo__button--remove">
+            <button 
+            className="todo__button todo__button--remove"
+            onClick={() => {removeTask(task.id)}}
+            >
             <i className="fas fa-trash-alt"></i>
             </button>
             </li>
