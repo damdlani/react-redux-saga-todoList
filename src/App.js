@@ -7,20 +7,26 @@ import Header from './Header';
 import Footer from './Footer';
 import Container from './Container';
 
-const tasks = [
-  {id: 1, content: "test1", done: true },
-  {id: 2, content: "test2", done: false },
-];
-
-
 
 function App() {
+  const [tasks, setTasks] = useState(
+    [
+      {id: 1, content: "test1", done: true },
+      {id: 2, content: "test2", done: false },
+    ]
+  );
+
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone)
   };
 
+  const setAllDone = () => {
+    setTasks(tasks => tasks.map(
+      task => ({...task, done: true})
+    ))
+  };
 
   return (
     <Container>
@@ -38,7 +44,7 @@ function App() {
             <Tasks tasks={tasks} hideDone={hideDone} />
             } 
             extraContent={
-            <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}/>
+            <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}/>
             }
             />
         <Footer content="&copy;Krzysztof Kwieciński 2020" />
