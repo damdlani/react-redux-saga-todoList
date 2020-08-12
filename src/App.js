@@ -57,14 +57,14 @@ function App() {
 
             <Section
             title="Lista zadań"
-            body={
-            <Tasks 
-              tasks={tasks} 
-              hideDone={hideDone} 
-              toggleTaskDone={toggleTaskDone} 
-              removeTask={removeTask}
-            />
-            } 
+            body={tasks.length !== 0 ? 
+              <Tasks 
+                tasks={tasks} 
+                hideDone={hideDone} 
+                toggleTaskDone={toggleTaskDone} 
+                removeTask={removeTask}
+              />
+               : "Nie masz na razie żadnych zadań."}
             extraContent={
             <Buttons 
               tasks={tasks} 
