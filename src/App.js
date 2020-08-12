@@ -22,7 +22,7 @@ function App() {
     setHideDone(hideDone => !hideDone)
   };
 
-  const setAllDone = () => {
+  const setEachDone = () => {
     setTasks(tasks => tasks.map(
       task => ({...task, done: true})
     ))
@@ -58,10 +58,20 @@ function App() {
             <Section
             title="Lista zadań"
             body={
-            <Tasks tasks={tasks} hideDone={hideDone} toggleTaskDone={toggleTaskDone} removeTask={removeTask}/>
+            <Tasks 
+              tasks={tasks} 
+              hideDone={hideDone} 
+              toggleTaskDone={toggleTaskDone} 
+              removeTask={removeTask}
+            />
             } 
             extraContent={
-            <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone}/>
+            <Buttons 
+              tasks={tasks} 
+              hideDone={hideDone} 
+              toggleHideDone={toggleHideDone} 
+              setEachDone={setEachDone}
+            />
             }
             />
         <Footer content="&copy;Krzysztof Kwieciński 2020" />
