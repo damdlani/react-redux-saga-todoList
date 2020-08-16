@@ -10,10 +10,7 @@ import Container from './Container';
 
 function App() {
   const [tasks, setTasks] = useState(
-    [
-      {id: 1, content: "test1", done: true },
-      {id: 2, content: "test2", done: false },
-    ]
+    []
   );
 
   const [hideDone, setHideDone] = useState(false);

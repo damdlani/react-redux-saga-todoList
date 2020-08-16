@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./style.css"
 
-const Form = ({addNewTask}) => {
+const Form = ({ addNewTask }) => {
     const [newTaskContent, setNewTaskContent] = useState("");
 
     const onFormSubmit = (event) => {
@@ -13,23 +13,23 @@ const Form = ({addNewTask}) => {
         setNewTaskContent(event.target.value)
     };
 
-    return <form 
-            className="form"
-            onSubmit={onFormSubmit}
-            >
-                <input 
-                className="form__input" 
-                autoFocus 
-                type="text" 
-                placeholder="Co jest do zrobienia?"
-                value={newTaskContent}
-                onChange={changeNewTaskContent}
-                />
-                <button 
-                className="form__submit ">
-                    Dodaj zadanie
+    return <form
+        className="form"
+        onSubmit={onFormSubmit}
+    >
+        <input
+            className="form__input"
+            autoFocus
+            type="text"
+            placeholder="Co jest do zrobienia?"
+            value={newTaskContent}
+            onChange={changeNewTaskContent}
+        />
+        <button
+            className="form__submit ">
+            Dodaj zadanie
                 </button>
-            </form>
+    </form>
 };
 
 export default Form;
