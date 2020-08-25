@@ -10,13 +10,17 @@ import Container from './Container';
 
 function App() {
   const [tasks, setTasks] = useState(
-    []
+    [{id:1, content: "test1", done: true}]
   );
 
   const [hideDone, setHideDone] = useState(false);
+  
+  let localHideDone = JSON.parse(localStorage.getItem("hideDone"));
+  
 
   const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone)
+    setHideDone(hideDone => !hideDone);
+    localStorage.setItem("hideDone", hideDone);
   };
 
   const setEachDone = () => {
@@ -70,7 +74,7 @@ function App() {
             body={tasks.length !== 0 ? 
               <Tasks 
                 tasks={tasks} 
-                hideDone={hideDone} 
+                hideDone={localHideDone} 
                 toggleTaskDone={toggleTaskDone} 
                 removeTask={removeTask}
               />
@@ -78,7 +82,7 @@ function App() {
             extraContent={
             <Buttons 
               tasks={tasks} 
-              hideDone={hideDone} 
+              hideDone={localHideDone} 
               toggleHideDone={toggleHideDone} 
               setEachDone={setEachDone}
             />

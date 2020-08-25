@@ -126,6 +126,7 @@
     padding: 5px 20px;
     flex-grow: 1;
     line-break: anywhere;
+    font-style: normal;
 }
 
 @media (max-width: 768px) {
