@@ -11,19 +11,18 @@ import Container from './Container';
 function App() {
 
   let localTasks = JSON.parse(localStorage.getItem("tasks"));
-  
-  
+  let localHideDone = JSON.parse(localStorage.getItem("hideDone"));
   
   const [tasks, setTasks] = useState(localTasks === null ? [] : localTasks);
   localStorage.setItem("tasks", JSON.stringify(tasks))
 
-  const [hideDone, setHideDone] = useState(false);
-  
+  const [hideDone, setHideDone] = useState(localHideDone === null ? false : localHideDone);
+  localStorage.setItem("hideDone", JSON.stringify(hideDone));
   
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);    
   };
-
+  
   const setEachDone = () => {
     setTasks(tasks => tasks.map(
       task => ({...task, done: true})
@@ -74,7 +73,7 @@ function App() {
             title="Lista zadań"
             body={tasks.length !== 0 ? 
               <Tasks 
-                tasks={localTasks} 
+                tasks={tasks} 
                 hideDone={hideDone} 
                 toggleTaskDone={toggleTaskDone} 
                 removeTask={removeTask}
@@ -82,7 +81,7 @@ function App() {
                : `Nie masz na razie żadnych zadań.`}
             extraContent={
             <Buttons 
-              tasks={localTasks} 
+              tasks={tasks} 
               hideDone={hideDone} 
               toggleHideDone={toggleHideDone} 
               setEachDone={setEachDone}
