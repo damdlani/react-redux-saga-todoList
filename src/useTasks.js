@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useLocalStorageState } from './useLocalStorageState';
 
-export const useTasks = () => {
-    let localTasks = JSON.parse(localStorage.getItem("tasks"));
-    let localHideDone = JSON.parse(localStorage.getItem("hideDone"));
-  
-    const [tasks, setTasks] = useState(localTasks === null ? [] : localTasks);
-    const [hideDone, setHideDone] = useState(localHideDone === null ? false : localHideDone);
-  
-    useEffect(() => {
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-      localStorage.setItem("hideDone", JSON.stringify(hideDone));
-    }, [tasks, hideDone]);
+
+export const useTasks = () => {  
+    const [tasks, setTasks] = useLocalStorageState("tasks", [])
+    const [hideDone, setHideDone] = useLocalStorageState("hideDone", false)
+
    
     const setEachDone = () => {
       setTasks(tasks => tasks.map(
