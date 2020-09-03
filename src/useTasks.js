@@ -5,7 +5,6 @@ export const useTasks = () => {
     const [tasks, setTasks] = useLocalStorageState("tasks", [])
     const [hideDone, setHideDone] = useLocalStorageState("hideDone", false)
 
-   
     const setEachDone = () => {
       setTasks(tasks => tasks.map(
         task => ({...task, done: true})
