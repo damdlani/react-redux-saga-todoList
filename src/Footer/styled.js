@@ -1,4 +1,6 @@
-.footer {
+import styled from 'styled-components';
+
+export const StyledFooter = styled.footer`
     padding: 5px;
     position: absolute;
     width: 100%;
@@ -7,4 +9,4 @@
     transform: translateY(-100%);
     font-size: 12px;
     text-align: center;
-}
+`;
