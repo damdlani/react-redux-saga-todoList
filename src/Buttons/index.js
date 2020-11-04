@@ -7,7 +7,6 @@ const Buttons = ({tasks, hideDone, toggleHideDone, setEachDone}) => {
 	}
 	return (
 		<ButtonsBox>
-	
 			<Button
 			disabled={tasks.every(({ done }) => done === false)}
 			onClick={toggleHideDone}
@@ -21,7 +20,6 @@ const Buttons = ({tasks, hideDone, toggleHideDone, setEachDone}) => {
 			>
 				Ukończ wszystkie
 			</Button>
-
 		</ButtonsBox>	
 	)
 };
