@@ -28,9 +28,7 @@ const tasksSlice = createSlice({
             state.hideDone = !state.hideDone;
         },
         setEachDone: ( state ) => {
-            state.tasks = state.tasks.map(
-                task => ({...task, done: true})
-              )
+            state.tasks.forEach(task => task.done = true);
         },
     },
 });

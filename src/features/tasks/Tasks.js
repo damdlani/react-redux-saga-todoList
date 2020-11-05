@@ -19,7 +19,6 @@ function Tasks() {
           title="Dodaj nowe zadanie"
           body={<Form />}
         />
-
         <Section
           title="Lista zadań"
           body={tasks.length > 0 ? 
