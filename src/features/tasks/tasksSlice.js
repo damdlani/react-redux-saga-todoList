@@ -3,13 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const tasksSlice = createSlice({
     name: "tasks",
     initialState: {
-        tasks: [
-            {
-                content: "Zadanie z reduxa",
-                done: true,
-                id: 1,
-            }
-        ],
+        tasks: [],
         hideDone: false,
     },
     reducers: {
