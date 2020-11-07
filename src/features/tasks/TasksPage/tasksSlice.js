@@ -35,11 +35,11 @@ const tasksSlice = createSlice({
         addExampleTasks: (state, { payload: exampleTasks }) => {
             state.isExampleTaskLoading = false;
             
-            const checkIfTaskExist = () => {
+            const pushRandomTask = () => {
                 const index = getRandomIndex(exampleTasks.length);
                 if(state.tasks.find(({ id }) => id === exampleTasks[index].id)){
                     try {
-                        checkIfTaskExist();
+                        pushRandomTask();
                     } catch(error) {
                         state.outOfExamples = true;
                     }
@@ -47,7 +47,7 @@ const tasksSlice = createSlice({
                     state.tasks.push(exampleTasks[index]);
                 }
             }
-            checkIfTaskExist()
+            pushRandomTask()
         },
         saveDataToLocal: (state) => {
             setLocalStorageData(state.tasks, state.hideDone)
