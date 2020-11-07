@@ -25,7 +25,11 @@ const TaskList = () => {
                     >
                     {task.content}
                     </Span>
-
+                    <Button 
+                        edit
+                    >
+                    <i class="fas fa-pencil-alt"></i>
+                    </Button>
                     <Button 
                         remove
                         onClick={() => dispatch(removeTask(task.id))}

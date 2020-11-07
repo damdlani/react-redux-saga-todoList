@@ -4,7 +4,7 @@ export const StyledForm = styled.form`
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    padding: 30px;
+    padding: 15px;
 `;
 
 export const Input = styled.input`

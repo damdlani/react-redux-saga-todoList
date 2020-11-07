@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux'
 import Form from './Form';
 import TaskList from './TaskList';
-import Buttons from './Buttons';
-import Section from '../../common/Section';
-import Header from '../../common/Header';
-import Footer from '../../common/Footer';
-import Container from '../../common/Container';
+import Buttons from './TaskHandlingButtons';
+import Section from '../../../common/Section';
+import Header from '../../../common/Header';
+import Footer from '../../../common/Footer';
+import Container from '../../../common/Container';
 import { selectTasks } from './tasksSlice';
+import { ExampleTasksButton } from './ExampleTasksButton';
+import { getExampleTasks } from './getExampleTasks';
 
 function Tasks() {
   const { tasks } = useSelector(selectTasks);
@@ -18,6 +20,7 @@ function Tasks() {
         <Section 
           title="Dodaj nowe zadanie"
           body={<Form />}
+          extraContent={<ExampleTasksButton />}
         />
         <Section
           title="Lista zadań"

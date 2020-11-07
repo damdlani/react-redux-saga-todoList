@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
-    padding: 30px;
+    padding: 15px;
     margin: 0;
     list-style: none;
 
@@ -26,10 +26,14 @@ export const ListItem = styled.ul`
 
 export const Button = styled.button`
     flex-shrink: 0;
-    flex-basis: 40px;
+    flex-basis: 35px;
     align-self: center;
-    height: 40px;
+    height: 35px;
     padding: 10px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
     transition: .3s;
@@ -45,23 +49,25 @@ export const Button = styled.button`
     }
 
     &:hover {
-    cursor: pointer;
+        cursor: pointer;
+        filter: brightness(1.2)
     }
 
     ${({check}) => check && css`
         background-color: rgb(5, 104, 10);
 
-        &:hover {
-            background-color: hsl(123, 91%, 25%);
-        }
     `}
 
     ${({remove}) => remove && css`
         background-color: rgb(104, 5, 5);
 
-        &:hover {
-            background-color: hsl(0, 91%, 25%);
-        }    
+        @media (max-width: 400px) {
+            font-size: 12px;
+        }
+    `}
+    ${({edit}) => edit && css`
+        background-color: rgb(233, 199, 1);
+        margin-right: 5px;
 
         @media (max-width: 400px) {
             font-size: 12px;

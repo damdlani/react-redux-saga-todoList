@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "content": "Nakarmić psa",
+        "done": false
+    },
+    {
+        "id": 2,
+        "content": "Zrobić kilkuminutową gimnastykę",
+        "done": true
+    }
+]
