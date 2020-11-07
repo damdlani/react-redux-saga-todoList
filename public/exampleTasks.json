@@ -7,6 +7,21 @@
     {
         "id": 2,
         "content": "Zrobić kilkuminutową gimnastykę",
-        "done": true
+        "done": false
+    },
+    {
+        "id": 3,
+        "content": "Obejrzeć jeden z klasyków kina",
+        "done": false
+    },
+    {
+        "id": 4,
+        "content": "Napić się wody",
+        "done": false
+    },
+    {
+        "id": 5,
+        "content": "Poczytać książkę",
+        "done": false
     }
 ]

@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getRandomIndex } from '../getRandomTask';
+import { getLocalStorageHideDone, getLocalStorageTasks, setLocalStorageData } from './localStorageData';
 
 const tasksSlice = createSlice({
     name: "tasks",
     initialState: {
-        tasks: [{id: 1,content: "dupa", done: false},{id: 2,content: "dupa", done: true}],
-        hideDone: false,
+        tasks: getLocalStorageTasks(),
+        hideDone: getLocalStorageHideDone(),
         isExampleTaskLoading: false,
     },
     reducers: {
@@ -32,10 +34,11 @@ const tasksSlice = createSlice({
         },
         addExampleTasks: (state, { payload: exampleTasks }) => {
             state.isExampleTaskLoading = false;
-            for ( const task of exampleTasks) {
-                state.tasks.push(task);
-            }
+            state.tasks.push(exampleTasks[getRandomIndex(exampleTasks.length)])
         },
+        saveDataToLocal: (state) => {
+            setLocalStorageData(state.tasks, state.hideDone)
+        }
     },
 });
 
@@ -46,7 +49,8 @@ export const {
     toggleHideDone, 
     setEachDone, 
     fetchExampleTasks,
-    addExampleTasks 
+    addExampleTasks,
+    saveDataToLocal
     } = tasksSlice.actions;
 
 export const selectTasksState = state => state.tasks;

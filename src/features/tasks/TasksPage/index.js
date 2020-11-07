@@ -12,7 +12,7 @@ import { ExampleTasksButton } from './ExampleTasksButton';
 
 function Tasks() {
   const tasks = useSelector(selectTasks);
-
+  
   return (
     <Container>
         <Header title="Lista zadań"/>
