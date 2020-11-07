@@ -9,10 +9,9 @@ import Footer from '../../../common/Footer';
 import Container from '../../../common/Container';
 import { selectTasks } from './tasksSlice';
 import { ExampleTasksButton } from './ExampleTasksButton';
-import { getExampleTasks } from './getExampleTasks';
 
 function Tasks() {
-  const { tasks } = useSelector(selectTasks);
+  const tasks = useSelector(selectTasks);
 
   return (
     <Container>

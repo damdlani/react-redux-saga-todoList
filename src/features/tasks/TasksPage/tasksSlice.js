@@ -49,6 +49,12 @@ export const {
     addExampleTasks 
     } = tasksSlice.actions;
 
-export const selectTasks = state => state.tasks;
-export const selectIsExampleTaskLoading = state => selectTasks(state).isExampleTaskLoading;
+export const selectTasksState = state => state.tasks;
+
+export const selectTasks = state => selectTasksState(state).tasks
+export const selectHideDone = state => selectTasksState(state).hideDone
+export const selectIsExampleTaskLoading = state => selectTasksState(state).isExampleTaskLoading;
+export const selectIsEveryDone = state => selectTasks(state).every(({done}) => done);
+export const selectIsNoneDone = state => selectTasks(state).every(({done}) => done === false);
+
 export default tasksSlice.reducer;
