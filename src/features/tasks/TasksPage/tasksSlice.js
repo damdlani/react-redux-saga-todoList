@@ -34,7 +34,20 @@ const tasksSlice = createSlice({
         },
         addExampleTasks: (state, { payload: exampleTasks }) => {
             state.isExampleTaskLoading = false;
-            state.tasks.push(exampleTasks[getRandomIndex(exampleTasks.length)])
+            
+            const checkIfTaskExist = () => {
+                const index = getRandomIndex(exampleTasks.length);
+                if(state.tasks.find(({ id }) => id === exampleTasks[index].id)){
+                    try {
+                        checkIfTaskExist();
+                    } catch(error) {
+                        state.outOfExamples = true;
+                    }
+                } else {
+                    state.tasks.push(exampleTasks[index]);
+                }
+            }
+            checkIfTaskExist()
         },
         saveDataToLocal: (state) => {
             setLocalStorageData(state.tasks, state.hideDone)
@@ -58,6 +71,7 @@ export const selectTasksState = state => state.tasks;
 export const selectTasks = state => selectTasksState(state).tasks
 export const selectHideDone = state => selectTasksState(state).hideDone
 export const selectIsExampleTaskLoading = state => selectTasksState(state).isExampleTaskLoading;
+export const selectIsOutOfExamples = state => selectTasksState(state).outOfExamples;
 export const selectIsEveryDone = state => selectTasks(state).every(({done}) => done);
 export const selectIsNoneDone = state => selectTasks(state).every(({done}) => done === false);
 

@@ -17,7 +17,6 @@ function* fetchExampleTasksHandler() {
 function* saveToLocalStorageHandler() {
     const tasks = yield select(selectTasks);
     const hideDone = yield select(selectHideDone);
-    console.log(hideDone)
     yield call(setLocalStorageData, tasks, hideDone);
 };
 
