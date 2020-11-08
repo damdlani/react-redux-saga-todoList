@@ -30,6 +30,7 @@ export const Button = styled.button`
     color: white;
     font-size: 16px;
     transition: .3s;
+    align-self: flex-start;
     
     &:hover {
     cursor: pointer;
@@ -40,6 +41,9 @@ export const Button = styled.button`
     &:active {
     color: black;
     outline: none;
+    }
+    &:disabled {
+        display: none;
     }
 
     @media (max-width: 768px) {

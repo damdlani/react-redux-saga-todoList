@@ -3,6 +3,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../tasksSlice';
 import { StyledForm, Input, Button } from './styled';
+import { getDate } from "../../getDate";
 
 const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
@@ -13,12 +14,15 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         const trimmedTaskContent = newTaskContent.trim();
+        
         if (trimmedTaskContent === ""){
             return
         };
         dispatch(addTask({
             content: trimmedTaskContent,
             done: false,
+            date: getDate(),
+            detail: "",
             id: nanoid(),
         }))
         setNewTaskContent("");

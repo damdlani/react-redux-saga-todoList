@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { StyledNavLink } from "../../../../common/Nav/styled";
 import { removeTask, toggleTaskDone, selectTasks, selectHideDone } from '../tasksSlice';
 import { List, ListItem, Button, Span } from './styled';
 
@@ -24,12 +26,12 @@ const TaskList = () => {
                     <Span 
                         done={task.done}
                     >
-                    {task.content}
+                    <StyledNavLink to={`/zadania/${task.id}`}>{task.content}</StyledNavLink>
                     </Span>
                     <Button 
                         edit
                     >
-                    <i class="fas fa-pencil-alt"></i>
+                    <StyledNavLink button to={`/zadania/${task.id}`}><i class="fas fa-pencil-alt"></i></StyledNavLink>
                     </Button>
                     <Button 
                         remove

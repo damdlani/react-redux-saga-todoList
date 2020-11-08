@@ -1,7 +1,9 @@
 import React from "react";
 import { StyledSection, Header, Title, TasksWrapper } from './styled';
 
-const Section = ({title, body, extraContent}) => (
+const Section = ({ title, body, extraContent }) => {
+
+  return (
     <StyledSection>
       <Header>
         <Title>{title}</Title>                  
@@ -11,6 +13,7 @@ const Section = ({title, body, extraContent}) => (
       	{body}
       </TasksWrapper>
     </StyledSection>
-);
+)
+};
 
 export default Section;

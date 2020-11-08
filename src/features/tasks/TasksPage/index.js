@@ -10,9 +10,9 @@ import Container from '../../../common/Container';
 import { selectTasks } from './tasksSlice';
 import { ExampleTasksButton } from './ExampleTasksButton';
 
-function Tasks() {
+export const Tasks = () => {
   const tasks = useSelector(selectTasks);
-  
+
   return (
     <Container>
         <Header title="Lista zadań"/>
@@ -34,5 +34,3 @@ function Tasks() {
     </Container>
   );
 }
-
-export default Tasks;

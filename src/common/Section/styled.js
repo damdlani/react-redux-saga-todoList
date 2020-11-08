@@ -20,6 +20,7 @@ export const Title = styled.h2`
     padding: 20px 30px;
     background-color: white;
     flex-grow: 1;
+    display: flex;
 
     @media (max-width: 768px) {
         font-size: 22px;
@@ -37,6 +38,5 @@ export const TasksWrapper = styled.div`
         font-size: 12px;
     }
 `;
-
 
 

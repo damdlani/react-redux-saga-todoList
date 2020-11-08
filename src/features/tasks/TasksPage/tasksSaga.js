@@ -7,7 +7,7 @@ import { addExampleTasks, fetchExampleTasks, selectHideDone, selectTasks } from 
 function* fetchExampleTasksHandler() {
     try {
         const exampleTasks = yield call(getExampleTasks);
-        yield delay(1000);
+        yield delay(500);
         yield put(addExampleTasks(exampleTasks))
     } catch (error) {
         yield call (alert, error)
