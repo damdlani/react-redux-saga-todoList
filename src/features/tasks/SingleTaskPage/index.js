@@ -40,9 +40,12 @@ export const SingleTaskPage = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    if(!taskContent){
+    const trimmedTask = taskContent.trim();
+    if(!trimmedTask){
       setTaskContent("Zadanie bez nazwy")
-    };
+    } else {
+      setTaskContent(trimmedTask)
+    }
     document.activeElement.blur();
   };
 
@@ -50,8 +53,7 @@ export const SingleTaskPage = () => {
     setTaskDetail(event.target.value);
   };
   const changeTaskTitleContent = (event) => {
-    const trimmedTask = event.target.value.trim();
-    setTaskContent(trimmedTask);
+    setTaskContent(event.target.value);
   };
   return (
     <Container>
