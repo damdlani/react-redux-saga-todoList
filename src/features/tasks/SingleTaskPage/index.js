@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import Container from "../../../common/Container";
 import Footer from "../../../common/Footer";
 import { StyledSection } from "../../../common/Section/styled";
@@ -24,9 +24,14 @@ import {
 
 export const SingleTaskPage = () => {
   const { id } = useParams();
-  const { content, done, date, detail } = useSelector((state) =>
-    selectTaskByID(state, id)
-  );
+  const history = useHistory();
+  const location = useLocation();
+  console.log(window.location)
+  const task = useSelector((state) => selectTaskByID(state, id));
+  if(task === undefined){
+    window.location = `${window.location.origin}`
+  };
+  const { content, done, date, detail } = task;
   const [taskDetail, setTaskDetail] = useState(detail);
   const [taskContent, setTaskContent] = useState(content);
   const textarea = useRef(null);
