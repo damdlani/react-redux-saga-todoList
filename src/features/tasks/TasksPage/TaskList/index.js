@@ -1,14 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { StyledNavLink } from "../../../../common/Nav/styled";
-import { removeTask, toggleTaskDone, selectTasks, selectHideDone } from '../tasksSlice';
+import { removeTask, toggleTaskDone, selectTasks, selectHideDone, selectTaskByQuery } from '../tasksSlice';
 import { List, ListItem, Button, Span } from './styled';
 
 const TaskList = () => {
     const dispatch = useDispatch();
-    const tasks = useSelector(selectTasks);
+    const { search } = useLocation();
+    const searchParams = new URLSearchParams(search);
+    const query = searchParams.get("szukaj");
+    const tasks = useSelector(state => selectTaskByQuery(state, query))
     const hideDone = useSelector(selectHideDone);
+
 
     return  <List>
                 {tasks.map((task) => (
@@ -28,11 +32,9 @@ const TaskList = () => {
                     >
                     <StyledNavLink to={`/zadania/${task.id}`}>{task.content}</StyledNavLink>
                     </Span>
-                    <Button 
-                        edit
-                    >
-                    <StyledNavLink button to={`/zadania/${task.id}`}><i class="fas fa-pencil-alt"></i></StyledNavLink>
-                    </Button>
+
+                    <StyledNavLink button to={`/zadania/${task.id}`}><Button edit><i class="fas fa-pencil-alt"></i></Button></StyledNavLink>
+
                     <Button 
                         remove
                         onClick={() => dispatch(removeTask(task.id))}

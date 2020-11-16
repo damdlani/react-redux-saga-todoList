@@ -12,8 +12,8 @@ export const ButtonsBox = styled.div`
 
 export const Button = styled.button`
     flex-grow: 1;
-    padding: 5px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0 10px;
     border: none;
     background-color: transparent;
     color: hsl(180, 66%, 20%);

@@ -1,25 +1,10 @@
 import styled from 'styled-components';
 
+
 export const StyledForm = styled.form`
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
-    padding: 15px;
-`;
-
-export const Input = styled.input`
-    flex-grow: 5;
-    margin: 5px;
-    padding: 5px 5px 5px 10px;
-
-    @media (max-width: 330px) {
-        &::placeholder {
-            font-size: 14px;
-        }
-    }
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+    padding: 0 15px;
 `;
 
 export const Button = styled.button`

@@ -24,12 +24,9 @@ import {
 
 export const SingleTaskPage = () => {
   const { id } = useParams();
-  const history = useHistory();
-  const location = useLocation();
-  console.log(window.location)
   const task = useSelector((state) => selectTaskByID(state, id));
   if(task === undefined){
-    window.location = `${window.location.origin}`
+    window.location = window.location.origin;
   };
   const { content, done, date, detail } = task;
   const [taskDetail, setTaskDetail] = useState(detail);
@@ -46,12 +43,13 @@ export const SingleTaskPage = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     const trimmedTask = taskContent.trim();
+    document.activeElement.blur();
     if(!trimmedTask){
       setTaskContent("Zadanie bez nazwy")
     } else {
       setTaskContent(trimmedTask)
     }
-    document.activeElement.blur();
+    
   };
 
   const changeDetailContent = (event) => {

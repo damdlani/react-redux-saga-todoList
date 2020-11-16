@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export const TaskHeader = styled.div`
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 0 3px;
     background-color: white;
     padding: 20px;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
 `;
 
 export const TaskContentForm = styled.form`
+    flex-grow: 1;
     display: flex;
+    margin-right: 5px;
 `;
 
 export const ContentInput = styled.input`
@@ -22,6 +28,9 @@ export const ContentInput = styled.input`
     &:focus {
         outline: none;
         background-color: #eee;
+    }
+    @media (max-width: 768px) {
+        font-size: 18px;
     }
 `;
 
@@ -40,7 +49,9 @@ export const EditButton = styled.button`
 `;
 
 export const TaskSpan = styled.span`
+    margin-top: 10px;
     font-weight: bold;
+    font-style: italic;
     align-self: center;
 `;
 

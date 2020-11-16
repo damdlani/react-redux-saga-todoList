@@ -17,7 +17,7 @@ export const Header = styled.div`
 
 export const Title = styled.h2`
     margin: 0 0 3px;
-    padding: 20px 30px;
+    padding: 15px 30px;
     background-color: white;
     flex-grow: 1;
     display: flex;

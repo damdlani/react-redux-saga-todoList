@@ -7,11 +7,13 @@ import Section from '../../../common/Section';
 import Header from '../../../common/Header';
 import Footer from '../../../common/Footer';
 import Container from '../../../common/Container';
-import { selectTasks } from './tasksSlice';
+import { selectAreTasks } from './tasksSlice';
 import { ExampleTasksButton } from './ExampleTasksButton';
+import { Search } from './Search';
+
 
 export const Tasks = () => {
-  const tasks = useSelector(selectTasks);
+  const areTasks = useSelector(selectAreTasks);
 
   return (
     <Container>
@@ -21,9 +23,15 @@ export const Tasks = () => {
           body={<Form />}
           extraContent={<ExampleTasksButton />}
         />
+        {areTasks ?
+          <Section 
+          title="Filtruj zadania"
+          body={<Search />} 
+        /> : ""
+        }
         <Section
           title="Lista zadań"
-          body={tasks.length > 0 ? 
+          body={areTasks ? 
             <TaskList />
                : `Nie masz na razie żadnych zadań.`}
             extraContent={

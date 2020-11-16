@@ -85,6 +85,15 @@ export const selectIsExampleTaskLoading = state => selectTasksState(state).isExa
 export const selectIsOutOfExamples = state => selectTasksState(state).outOfExamples;
 export const selectIsEveryDone = state => selectTasks(state).every(({done}) => done);
 export const selectIsNoneDone = state => selectTasks(state).every(({done}) => done === false);
+export const selectAreTasks = state => selectTasks(state).length > 0;
+
 export const selectTaskByID = (state, taskID) => selectTasks(state).find(({ id }) => id === taskID);
+
+export const selectTaskByQuery = (state, query) => {
+    if(!query || query.trim() === ""){
+        return selectTasks(state);
+    }
+    return selectTasks(state).filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
+};
 
 export default tasksSlice.reducer;

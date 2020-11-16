@@ -27,15 +27,20 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
         border-bottom: solid 2px hsl(180, 66%, 20%);
     }
     color: black;
+    text-decoration: none;
+    
     ${({button}) => !button && css`
         color: hsl(180, 66%, 20%);
-        border: 2px solid white;
         text-decoration: none;
         font-size: 18px;
         padding: 10px 10px 5px 10px;
         transition: .3s ease;
     `}
+
     &:hover {
         filter: brightness(1.5)
+    }
+    @media (max-width: 768px) {
+        font-size: 16px;
     }
 `;

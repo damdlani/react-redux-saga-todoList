@@ -38,7 +38,7 @@ export const Button = styled.button`
     outline: none;
     transition: .3s;
 
-    @media (max-width: 400px) {
+    @media (max-width: 768px) {
         flex-basis: 30px;
         height: 30px;
         font-size: 10px;
