@@ -68,3 +68,16 @@ export const TextArea = styled.textarea`
         background-color: #eee;
     }
 `;
+export const DoneButton = styled.button`
+    border: none;
+    transition: .3s ease;
+    background-color: transparent;
+
+    &:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+`;

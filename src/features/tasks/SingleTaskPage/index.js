@@ -4,15 +4,12 @@ import { useParams } from 'react-router-dom';
 import Container from '../../../common/Container';
 import Footer from '../../../common/Footer';
 import { StyledSection } from '../../../common/Section/styled';
-import { Button } from '../TasksPage/Form/styled';
-import { changeTaskDetail, changeTaskContent, selectTaskByID } from '../TasksPage/tasksSlice';
-import { EditButton, TaskContentForm, TaskSpan, TaskDetail, TaskHeader, DetailForm, TextArea, ContentInput } from './styled';
+import { changeTaskDetail, changeTaskContent, selectTaskByID, toggleTaskDone } from '../TasksPage/tasksSlice';
+import { EditButton, DoneButton, TaskContentForm, TaskSpan, TaskDetail, TaskHeader, DetailForm, TextArea, ContentInput } from './styled';
 
 export const SingleTaskPage = () => {
   const { id } = useParams();
   const { content, done, date, detail} = useSelector(state => selectTaskByID(state, id));
-  const [taskDetailEdit, setTaskDetailEdit] = useState(false);
-  const [taskContentEdit, setTaskContentEdit] = useState(false);
   const [taskDetail, setTaskDetail] = useState(detail);
   const [taskContent, setTaskContent] = useState(content);
   const textarea = useRef(null);
@@ -26,8 +23,6 @@ export const SingleTaskPage = () => {
   
   const onFormSubmit = (event) => {
     event.preventDefault();
-    setTaskContentEdit(false);
-    setTaskDetailEdit(false);
     document.activeElement.blur() 
   }
 
@@ -43,18 +38,13 @@ export const SingleTaskPage = () => {
         <TaskHeader>
         
           <TaskContentForm onSubmit={onFormSubmit}>
-            <EditButton onClick={() => input.current.focus()}><i class="fas fa-pencil-alt"></i></EditButton>
+            <EditButton type="button" onClick={() => input.current.focus()}><i class="fas fa-pencil-alt"></i></EditButton>
             <ContentInput 
               value={taskContent}
               type="text"
               ref={input} 
               onChange={changeTaskTitleContent}
-              onFocus={() => setTaskContentEdit(true)}
             />
-            <Button
-              disabled={!taskContentEdit}
-              onClick={() => setTaskContentEdit(false)}
-            >Zapisz</Button>
           </TaskContentForm>
             
           <TaskSpan>Dodano: {date}</TaskSpan> 
@@ -64,20 +54,15 @@ export const SingleTaskPage = () => {
           <EditButton onClick={() => textarea.current.focus()}><i class="fas fa-pencil-alt"></i></EditButton>
           <DetailForm onSubmit={onFormSubmit} >
             <TextArea  
-              onFocus={() => setTaskDetailEdit(true)}
               ref={textarea} rows={6} 
               placeholder={'Nie dodano szczegółów.'} 
               value={taskDetail} 
               onChange={changeDetailContent}
               type="text"
             />
-            <Button
-              disabled={!taskDetailEdit}
-              onClick={() => setTaskDetailEdit(false)}
-            >Zapisz</Button>
           </DetailForm>
 
-          <TaskSpan>Ukończone: {done ? "tak" : "nie"} </TaskSpan>
+          <TaskSpan>Ukończone: <DoneButton onClick={() => dispatch(toggleTaskDone(id))}>{done ? "tak" : "nie"}</DoneButton> </TaskSpan>
         </TaskDetail>
       </StyledSection>
       <Footer content="&copy;Krzysztof Kwieciński 2020" />
