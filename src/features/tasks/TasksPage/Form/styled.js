@@ -33,5 +33,7 @@ export const Button = styled.button`
 
     @media (max-width: 768px) {
         width: 100%;
+        padding: 10px;
+        font-size: 14px;
     }
 `;

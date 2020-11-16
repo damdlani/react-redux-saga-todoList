@@ -26,7 +26,7 @@ export const ListItem = styled.ul`
 
 export const Button = styled.button`
     flex-shrink: 0;
-    flex-basis: 35px;
+    width: 35px;
     align-self: center;
     height: 35px;
     padding: 10px;
@@ -39,8 +39,8 @@ export const Button = styled.button`
     transition: .3s;
 
     @media (max-width: 768px) {
-        flex-basis: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         font-size: 10px;
     }
 

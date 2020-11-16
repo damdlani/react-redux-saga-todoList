@@ -23,7 +23,7 @@ export const Title = styled.h2`
     display: flex;
 
     @media (max-width: 768px) {
-        font-size: 22px;
+        font-size: 18px;
     }
 `;
 
@@ -36,6 +36,7 @@ export const TasksWrapper = styled.div`
 
     @media (max-width: 400px) {
         font-size: 12px;
+        padding: 10px 0;
     }
 `;
 
