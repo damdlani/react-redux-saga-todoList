@@ -1,0 +1,62 @@
+[
+    {
+        "content": "Nakarmić psa",
+        "done": false,
+        "detail": "",
+        "id": "1"
+    },
+    {
+        "content": "Zrobić kilkuminutową gimnastykę",
+        "done": false,
+        "detail": "",
+        "id": "2"
+    },
+    {
+        "content": "Obejrzeć jeden z klasyków kina",
+        "done": false,
+        "detail": "",
+        "id": "3"
+    },
+    {
+        "content": "Napić się wody",
+        "done": false,
+        "detail": "",
+        "id": "4"
+    },
+    {
+        "content": "Zadzwonić do rodziców",
+        "done": false,
+        "detail": "",
+        "id": "5"
+    },
+    {
+        "content": "Iść do sklepu",
+        "done": false,
+        "detail": "",
+        "id": "6"
+    },
+    {
+        "content": "Wziąć lodowaty prysznic",
+        "done": false,
+        "detail": "",
+        "id": "7"
+    },
+    {
+        "content": "Zrobić 30 pompek",
+        "done": false,
+        "detail": "",
+        "id": "8"
+    },
+    {
+        "content": "Posprzątać w pokoju",
+        "done": false,
+        "detail": "",
+        "id": "9"
+    },
+    {
+        "content": "Dowiedzieć się czegoś nowego",
+        "done": false,
+        "detail": "",
+        "id": "10"
+    }
+]
