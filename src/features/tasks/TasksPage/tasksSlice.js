@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getDate } from '../getDate';
-import { getRandomIndex } from '../getRandomTask';
 import { getLocalStorageHideDone, getLocalStorageTasks, setLocalStorageData } from './localStorageData';
+import { pushRandomTask } from './pushRandomTask';
 
 const tasksSlice = createSlice({
     name: "tasks",
@@ -9,6 +8,7 @@ const tasksSlice = createSlice({
         tasks: getLocalStorageTasks(),
         hideDone: getLocalStorageHideDone(),
         isExampleTaskLoading: false,
+        isExampleTaskError: false,
     },
     reducers: {
         addTask: ({ tasks }, { payload: task }) => {
@@ -30,25 +30,17 @@ const tasksSlice = createSlice({
                 task.done = true;
             }
         },
-        fetchExampleTasks: (state) => {
+        fetchExampleTasksLoading: (state) => {
             state.isExampleTaskLoading = true;
         },
-        addExampleTasks: (state, { payload: exampleTasks }) => {
+        fetchExampleTasksSuccess: (state, { payload: exampleTasks }) => {
             state.isExampleTaskLoading = false;
-            
-            const pushRandomTask = () => {
-                const index = getRandomIndex(exampleTasks.length);
-                if(state.tasks.find(({ id }) => id === exampleTasks[index].id)){
-                    try {
-                        pushRandomTask();
-                    } catch(error) {
-                        state.outOfExamples = true;
-                    }
-                } else {
-                    state.tasks.push({...exampleTasks[index], date: getDate()});
-                }
-            }
-            pushRandomTask()
+        
+            pushRandomTask(state, exampleTasks)
+        },
+        fetchExampleTasksError: (state) => {
+            state.isExampleTaskLoading = false;
+            state.isExampleTaskError = true;
         },
         saveDataToLocal: (state) => {
             setLocalStorageData(state.tasks, state.hideDone)
@@ -70,8 +62,9 @@ export const {
     toggleTaskDone, 
     toggleHideDone, 
     setEachDone, 
-    fetchExampleTasks,
-    addExampleTasks,
+    fetchExampleTasksLoading,
+    fetchExampleTasksSuccess,
+    fetchExampleTasksError,
     saveDataToLocal,
     changeTaskDetail,
     changeTaskContent
@@ -82,6 +75,7 @@ export const selectTasksState = state => state.tasks;
 export const selectTasks = state => selectTasksState(state).tasks;
 export const selectHideDone = state => selectTasksState(state).hideDone;
 export const selectIsExampleTaskLoading = state => selectTasksState(state).isExampleTaskLoading;
+export const selectIsExampleTaskError = state => selectTasksState(state).isExampleTaskError;
 export const selectIsOutOfExamples = state => selectTasksState(state).outOfExamples;
 export const selectIsEveryDone = state => selectTasks(state).every(({done}) => done);
 export const selectIsNoneDone = state => selectTasks(state).every(({done}) => done === false);
