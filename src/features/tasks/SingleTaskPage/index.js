@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "../../../common/Container";
 import Footer from "../../../common/Footer";
 import { StyledSection } from "../../../common/Section/styled";
@@ -25,9 +25,9 @@ import {
 export const SingleTaskPage = () => {
   const { id } = useParams();
   const task = useSelector((state) => selectTaskByID(state, id));
-  if(task === undefined){
+  if (task === undefined) {
     window.location = window.location.origin;
-  };
+  }
   const { content, done, date, detail } = task;
   const [taskDetail, setTaskDetail] = useState(detail);
   const [taskContent, setTaskContent] = useState(content);
@@ -44,12 +44,11 @@ export const SingleTaskPage = () => {
     event.preventDefault();
     const trimmedTask = taskContent.trim();
     document.activeElement.blur();
-    if(!trimmedTask){
-      setTaskContent("Zadanie bez nazwy")
+    if (!trimmedTask) {
+      setTaskContent("Zadanie bez nazwy");
     } else {
-      setTaskContent(trimmedTask)
+      setTaskContent(trimmedTask);
     }
-    
   };
 
   const changeDetailContent = (event) => {
