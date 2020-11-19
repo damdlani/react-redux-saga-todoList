@@ -16,7 +16,7 @@ const TaskList = () => {
   const query = useQueryParameter(searchQueryParamName);
   const tasks = useSelector((state) => selectTaskByQuery(state, query));
   const hideDone = useSelector(selectHideDone);
-
+  
   return (
     <List>
       {tasks.map((task) => (

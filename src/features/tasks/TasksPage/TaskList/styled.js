@@ -59,7 +59,7 @@ export const Button = styled.button`
     `}
 
     ${({remove}) => remove && css`
-        background-color: rgb(104, 5, 5);
+        background-color: rgb(204, 5, 5);
 
         @media (max-width: 400px) {
             font-size: 12px;
