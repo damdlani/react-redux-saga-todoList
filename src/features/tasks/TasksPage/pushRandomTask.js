@@ -4,7 +4,7 @@ import { getRandomIndex } from "../getRandomTask";
 export const pushRandomTask = (tasks, exampleTasks) => {
   tasks.forEach((task) => {
     const index = exampleTasks.findIndex(({ id }) => id === task.id);
-    console.log(index);
+
     if (index >= 0) {
       exampleTasks.splice(index, 1);
     }
