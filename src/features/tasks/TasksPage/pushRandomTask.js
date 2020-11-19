@@ -1,16 +1,19 @@
 import { getDate } from "../getDate";
 import { getRandomIndex } from "../getRandomTask";
 
-export const pushRandomTask = (state, tasksArray) => {
-  const index = getRandomIndex(tasksArray.length);
-
-  if (state.tasks.find(({ id }) => id === tasksArray[index].id)) {
-    try {
-      pushRandomTask(state, tasksArray);
-    } catch (error) {
-      state.outOfExamples = true;
+export const pushRandomTask = (tasks, exampleTasks) => {
+  tasks.forEach((task) => {
+    const index = exampleTasks.findIndex(({ id }) => id === task.id);
+    console.log(index);
+    if (index >= 0) {
+      exampleTasks.splice(index, 1);
     }
-  } else {
-    state.tasks.push({ ...tasksArray[index], date: getDate() });
+    return;
+  });
+
+  if (exampleTasks.length !== 0) {
+    const index = getRandomIndex(exampleTasks.length);
+    return { ...exampleTasks[index], date: getDate() };
   }
+  return null;
 };

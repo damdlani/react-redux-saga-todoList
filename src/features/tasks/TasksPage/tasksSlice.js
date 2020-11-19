@@ -4,7 +4,6 @@ import {
   getLocalStorageTasks,
   setLocalStorageData,
 } from "./localStorageData";
-import { pushRandomTask } from "./pushRandomTask";
 
 const tasksSlice = createSlice({
   name: "tasks",
@@ -37,14 +36,18 @@ const tasksSlice = createSlice({
     fetchExampleTasksLoading: (state) => {
       state.isExampleTaskLoading = true;
     },
-    fetchExampleTasksSuccess: (state, { payload: exampleTasks }) => {
+    fetchExampleTasksSuccess: (state, { payload: exampleTask }) => {
       state.isExampleTaskLoading = false;
 
-      pushRandomTask(state, exampleTasks);
+      state.tasks.push(exampleTask);
     },
     fetchExampleTasksError: (state) => {
       state.isExampleTaskLoading = false;
       state.isExampleTaskError = true;
+    },
+    setOutOfExamples: (state) => {
+      state.isExampleTaskLoading = false;
+      state.outOfExamples = true;
     },
     saveDataToLocal: (state) => {
       setLocalStorageData(state.tasks, state.hideDone);
@@ -69,6 +72,7 @@ export const {
   fetchExampleTasksLoading,
   fetchExampleTasksSuccess,
   fetchExampleTasksError,
+  setOutOfExamples,
   saveDataToLocal,
   changeTaskDetail,
   changeTaskContent,
