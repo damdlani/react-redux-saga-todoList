@@ -58,5 +58,35 @@
         "done": false,
         "detail": "",
         "id": "10"
+    },
+    {
+        "content": "Zjeść coś dobrego",
+        "done": false,
+        "detail": "",
+        "id": "11"
+    },
+    {
+        "content": "Poczytać książkę",
+        "done": false,
+        "detail": "",
+        "id": "12"
+    },
+    {
+        "content": "Zrobić sobie 15 minut przerwy",
+        "done": false,
+        "detail": "",
+        "id": "13"
+    },
+    {
+        "content": "Zedytować to zadanie",
+        "done": false,
+        "detail": "",
+        "id": "14"
+    },
+    {
+        "content": "Uśmiechnąć się",
+        "done": false,
+        "detail": "",
+        "id": "15"
     }
 ]
