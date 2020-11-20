@@ -1,3 +1,3 @@
-export const getRandomIndex = (maxNumber) => {
-  return Math.floor(Math.random() * Math.floor(maxNumber));
+export const getRandomTask = (exampleTasks) => {
+  return exampleTasks[Math.floor(Math.random() * Math.floor(exampleTasks.length))];
 };
