@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-redux-saga-todoList/static/js/main.5466e6de.chunk.js",
-    "main.js.map": "/react-redux-saga-todoList/static/js/main.5466e6de.chunk.js.map",
+    "main.js": "/react-redux-saga-todoList/static/js/main.48a467e3.chunk.js",
+    "main.js.map": "/react-redux-saga-todoList/static/js/main.48a467e3.chunk.js.map",
     "runtime-main.js": "/react-redux-saga-todoList/static/js/runtime-main.3de408b4.js",
     "runtime-main.js.map": "/react-redux-saga-todoList/static/js/runtime-main.3de408b4.js.map",
     "static/js/2.280f8faa.chunk.js": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js",
     "static/js/2.280f8faa.chunk.js.map": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js.map",
     "index.html": "/react-redux-saga-todoList/index.html",
-    "precache-manifest.532eac538d7ed690baeb4c6732547249.js": "/react-redux-saga-todoList/precache-manifest.532eac538d7ed690baeb4c6732547249.js",
+    "precache-manifest.5865897f63b83a8ca57607f6b20d35a0.js": "/react-redux-saga-todoList/precache-manifest.5865897f63b83a8ca57607f6b20d35a0.js",
     "service-worker.js": "/react-redux-saga-todoList/service-worker.js",
     "static/js/2.280f8faa.chunk.js.LICENSE.txt": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3de408b4.js",
     "static/js/2.280f8faa.chunk.js",
-    "static/js/main.5466e6de.chunk.js"
+    "static/js/main.48a467e3.chunk.js"
   ]
 }

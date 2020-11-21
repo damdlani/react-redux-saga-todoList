@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4c9ff1820cec02edf7f088ae2d30d542",
+    "revision": "6449f123504ab3e4c5dc56be3fe86e4c",
     "url": "/react-redux-saga-todoList/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "30c9b7aac0eae8edfff7",
-    "url": "/react-redux-saga-todoList/static/js/main.5466e6de.chunk.js"
+    "revision": "6ac801033959e65ab7b9",
+    "url": "/react-redux-saga-todoList/static/js/main.48a467e3.chunk.js"
   },
   {
     "revision": "0b81dca7ccab07d1017e",
