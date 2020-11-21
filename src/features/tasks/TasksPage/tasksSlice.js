@@ -11,7 +11,6 @@ const tasksSlice = createSlice({
     tasks: getLocalStorageTasks(),
     hideDone: getLocalStorageHideDone(),
     isExampleTaskLoading: false,
-    isExampleTaskError: false,
   },
   reducers: {
     addTask: ({ tasks }, { payload: task }) => {
@@ -43,7 +42,7 @@ const tasksSlice = createSlice({
     },
     fetchExampleTasksError: (state) => {
       state.isExampleTaskLoading = false;
-      state.isExampleTaskError = true;
+      alert("Nie udało się pobrać zadania 😞")
     },
     setOutOfExamples: (state) => {
       state.isExampleTaskLoading = false;
@@ -84,8 +83,6 @@ export const selectTasks = (state) => selectTasksState(state).tasks;
 export const selectHideDone = (state) => selectTasksState(state).hideDone;
 export const selectIsExampleTaskLoading = (state) =>
   selectTasksState(state).isExampleTaskLoading;
-export const selectIsExampleTaskError = (state) =>
-  selectTasksState(state).isExampleTaskError;
 export const selectIsOutOfExamples = (state) =>
   selectTasksState(state).outOfExamples;
 export const selectIsEveryDone = (state) =>

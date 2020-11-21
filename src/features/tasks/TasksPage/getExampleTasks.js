@@ -1,5 +1,5 @@
 export const getExampleTasks = async () => {
-  const response = await fetch("/react-todoList/exampleTasks.json");
+  const response = await fetch("/react-redux-saga-todoList/exampleTasks.json");
 
   if (!response.ok) {
     throw new Error(response.statusText);

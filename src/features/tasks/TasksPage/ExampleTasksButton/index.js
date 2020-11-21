@@ -11,7 +11,6 @@ import {
 export const ExampleTasksButton = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectIsExampleTaskLoading);
-  const error = useSelector(selectIsExampleTaskError);
   const outOfExamples = useSelector(selectIsOutOfExamples);
 
   return (
@@ -24,8 +23,6 @@ export const ExampleTasksButton = () => {
           ? "Ładowanie..."
           : outOfExamples
           ? "Nie ma więcej zadań do pobrania😞"
-          : error
-          ? "Nie udało się pobrać zadania 😵"
           : "Pobierz losowe zadanie"}
       </Button>
     </ButtonsBox>

@@ -30,6 +30,7 @@ function* fetchExampleTasksHandler() {
       yield put(fetchExampleTasksSuccess(exampleTask));
     }
   } catch (error) {
+    yield delay(500);
     yield put(fetchExampleTasksError());
   }
 }
