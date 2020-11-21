@@ -7,7 +7,7 @@ import {
 } from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
 import { setLocalStorageData } from "./localStorageData";
-import { returnRandomTask } from "./returnRandomTask";
+import { getRandomTask } from "./getRandomTask";
 import {
   fetchExampleTasksSuccess,
   fetchExampleTasksLoading,
@@ -21,7 +21,7 @@ function* fetchExampleTasksHandler() {
   try {
     const exampleTasks = yield call(getExampleTasks);
     const tasks = yield select(selectTasks);
-    const exampleTask = yield call(returnRandomTask, tasks, exampleTasks);
+    const exampleTask = yield call(getRandomTask, tasks, exampleTasks);
     yield delay(500);
 
     if (!exampleTask) {

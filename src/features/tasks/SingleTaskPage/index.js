@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Container from "../../../common/Container";
-import Footer from "../../../common/Footer";
 import { StyledSection } from "../../../common/Section/styled";
 import {
   changeTaskDetail,
@@ -99,7 +98,6 @@ export const SingleTaskPage = () => {
           </TaskSpan>
         </TaskDetail>
       </StyledSection>
-      <Footer content="&copy;Krzysztof Kwieciński 2020" />
     </Container>
   );
 };

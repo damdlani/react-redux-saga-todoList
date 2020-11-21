@@ -1,12 +1,12 @@
 import { getDate } from "../getDate";
-import { getRandomTask } from "../getRandomTask";
+import { getArrayItem } from "../getArrayItem";
 
-export const returnRandomTask = (tasks, exampleTasks) => {
+export const getRandomTask = (tasks, exampleTasks) => {
   const filteredExampleTasks = exampleTasks.filter(
     (exampleTask) => !tasks.some(({ id }) => id === exampleTask.id)
   );
 
   return filteredExampleTasks.length !== 0
-    ? { ...getRandomTask(filteredExampleTasks), date: getDate() }
+    ? { ...getArrayItem(filteredExampleTasks), date: getDate() }
     : null;
 };

@@ -5,7 +5,6 @@ import TaskList from "./TaskList";
 import Buttons from "./TaskHandlingButtons";
 import Section from "../../../common/Section";
 import Header from "../../../common/Header";
-import Footer from "../../../common/Footer";
 import Container from "../../../common/Container";
 import { selectAreTasks } from "./tasksSlice";
 import { ExampleTasksButton } from "./ExampleTasksButton";
@@ -28,7 +27,6 @@ export const Tasks = () => {
         body={areTasks ? <TaskList /> : `Nie masz na razie żadnych zadań.`}
         extraContent={<Buttons />}
       />
-      <Footer content="&copy;Krzysztof Kwieciński 2020" />
     </Container>
   );
 };
