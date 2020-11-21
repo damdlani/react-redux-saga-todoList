@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-todoList/static/js/main.1d515b07.chunk.js",
-    "main.js.map": "/react-todoList/static/js/main.1d515b07.chunk.js.map",
-    "runtime-main.js": "/react-todoList/static/js/runtime-main.9cfac244.js",
-    "runtime-main.js.map": "/react-todoList/static/js/runtime-main.9cfac244.js.map",
-    "static/js/2.cdb12761.chunk.js": "/react-todoList/static/js/2.cdb12761.chunk.js",
-    "static/js/2.cdb12761.chunk.js.map": "/react-todoList/static/js/2.cdb12761.chunk.js.map",
-    "index.html": "/react-todoList/index.html",
-    "precache-manifest.5e8978ff22539bdcf11f86d4b40dc148.js": "/react-todoList/precache-manifest.5e8978ff22539bdcf11f86d4b40dc148.js",
-    "service-worker.js": "/react-todoList/service-worker.js",
-    "static/js/2.cdb12761.chunk.js.LICENSE.txt": "/react-todoList/static/js/2.cdb12761.chunk.js.LICENSE.txt"
+    "main.js": "/react-redux-saga-todoList/static/js/main.5466e6de.chunk.js",
+    "main.js.map": "/react-redux-saga-todoList/static/js/main.5466e6de.chunk.js.map",
+    "runtime-main.js": "/react-redux-saga-todoList/static/js/runtime-main.3de408b4.js",
+    "runtime-main.js.map": "/react-redux-saga-todoList/static/js/runtime-main.3de408b4.js.map",
+    "static/js/2.280f8faa.chunk.js": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js",
+    "static/js/2.280f8faa.chunk.js.map": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js.map",
+    "index.html": "/react-redux-saga-todoList/index.html",
+    "precache-manifest.532eac538d7ed690baeb4c6732547249.js": "/react-redux-saga-todoList/precache-manifest.532eac538d7ed690baeb4c6732547249.js",
+    "service-worker.js": "/react-redux-saga-todoList/service-worker.js",
+    "static/js/2.280f8faa.chunk.js.LICENSE.txt": "/react-redux-saga-todoList/static/js/2.280f8faa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9cfac244.js",
-    "static/js/2.cdb12761.chunk.js",
-    "static/js/main.1d515b07.chunk.js"
+    "static/js/runtime-main.3de408b4.js",
+    "static/js/2.280f8faa.chunk.js",
+    "static/js/main.5466e6de.chunk.js"
   ]
 }
