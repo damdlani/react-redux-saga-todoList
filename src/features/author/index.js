@@ -1,16 +1,14 @@
 import React from "react";
 import Container from "../../common/Container";
-import Footer from "../../common/Footer";
-import Header from "../../common/Header";
-import Section from "../../common/Section";
+import { About } from "./About";
+
 
 export const Author = () => {
   return (
     <Container>
-      <Header title="O autorze" />
-      <Section title="Krzysztof Kwieciński" body={"Strona w budowie 👷‍♂️"} />
+      <About/>
 
-      <Footer content="&copy;Krzysztof Kwieciński 2020" />
+      
     </Container>
   );
 };
