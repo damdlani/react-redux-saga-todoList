@@ -26,9 +26,7 @@ const TaskList = () => {
           </Button>
 
           <Span done={task.done}>
-            <StyledNavLink to={`/zadania/${task.id}`}>
               {task.content}
-            </StyledNavLink>
           </Span>
 
           <StyledNavLink button to={`/zadania/${task.id}`}>

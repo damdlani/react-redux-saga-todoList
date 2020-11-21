@@ -18,6 +18,7 @@ export const ListItem = styled.ul`
     padding: 15px 10px;
     margin: 10px;
     border-bottom: 1px solid #ccc;
+    
 
     ${({hidden}) => hidden && css`
         display: none;
@@ -30,10 +31,9 @@ export const Button = styled.button`
     align-self: center;
     height: 35px;
     padding: 10px;
-    display: flex;
     font-size: 14px;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    line-height: 100%;
     border: none;
     outline: none;
     transition: .3s;
@@ -42,6 +42,7 @@ export const Button = styled.button`
         width: 25px;
         height: 25px;
         font-size: 10px;
+        padding: 0;
     }
 
     &:focus {
@@ -76,14 +77,22 @@ export const Button = styled.button`
 `;
 
 export const Span = styled.span`
-    text-align: justify;
+    text-align: left;
     padding: 5px 20px;
     flex-grow: 1;
-    line-break: anywhere;
+    font-size: 18px;
     font-style: normal;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @media (max-width: 768px) {
         padding: 10px;
+        font-size: 16px;
+    }
+    @media (max-width: 400px) {
+        padding: 10px;
+        font-size: 12px;
     }
 
     ${({done}) => done && css`
