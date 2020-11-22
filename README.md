@@ -7,6 +7,8 @@
 ![todo-list-gif](./public/readmeGif.gif)
 <br>
 <br>
+## Description:
+With my **TODO LIST** you can save your tasks, give them some details and filter if there are plenty of them. Don't know what to do? Be inspired by my example tasks! Enjoy!
 
 ## Author:
 **[Krzysztof Kwieciński](https://github.com/damdlani)** 
