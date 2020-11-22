@@ -10,28 +10,28 @@ export const StyledForm = styled.form`
 export const Button = styled.button`
     padding: 10px 20px;
     margin: 5px;
-    background-color: teal;
+    background-color: ${({ theme }) => theme.color.teal};
     border: none;
-    color: white;
+    color: ${({ theme }) => theme.color.white};
     font-size: 16px;
     transition: .3s;
     align-self: flex-start;
     
     &:hover {
     cursor: pointer;
-    color: #ddd;
+    color: ${({ theme }) => theme.color.pale};
     transform: scale(1.05)
     }
 
     &:active {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     outline: none;
     }
     &:disabled {
         display: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 100%;
         padding: 10px;
         font-size: 14px;

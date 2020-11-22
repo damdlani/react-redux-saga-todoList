@@ -5,7 +5,7 @@ export const ButtonsBox = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
   }
 `;
@@ -16,35 +16,34 @@ export const Button = styled.button`
   margin: 0 10px;
   border: none;
   background-color: transparent;
-  color: hsl(180, 66%, 20%);
+  color: ${({ theme }) => theme.color.teal};
   font-size: 18px;
   transition: color 0.2s, transform 0.2s;
 
   &:hover {
-    color: hsl(180, 66%, 40%);
+    filter: brightness(1.5);
     cursor: pointer;
   }
 
   &:active {
     transform: scale(0.9);
     outline: none;
+  }     
+  &:focus {
+    outline: none;
+    filter: brightness(1.5);
   }
-
   &:disabled {
-    color: hsl(0, 0%, 60%);
+    color: ${({ theme }) => theme.color.grey};
+    filter: none;
     cursor: auto;
   }
 
-  &:focus {
-    outline: none;
-    color: hsl(180, 66%, 40%);
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 10px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 14px;
     padding: 5px;
     margin: 5px;

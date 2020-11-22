@@ -10,6 +10,6 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     } 
     body {
-        background-color: #eee;
+        background-color: ${({ theme }) => theme.color.pale};
     }
 `;

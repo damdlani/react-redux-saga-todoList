@@ -5,7 +5,7 @@ export const List = styled.ul`
     margin: 0;
     list-style: none;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         padding: 5px;
     }
 `;
@@ -38,7 +38,7 @@ export const Button = styled.button`
     outline: none;
     transition: .3s;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 25px;
         height: 25px;
         font-size: 10px;
@@ -55,22 +55,22 @@ export const Button = styled.button`
     }
 
     ${({check}) => check && css`
-        background-color: rgb(5, 104, 10);
+        background-color: ${({ theme }) => theme.color.green};
 
     `}
 
     ${({remove}) => remove && css`
-        background-color: rgb(204, 5, 5);
+        background-color: ${({ theme }) => theme.color.red};
 
-        @media (max-width: 400px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
             font-size: 12px;
         }
     `}
     ${({edit}) => edit && css`
-        background-color: rgb(233, 199, 1);
+        background-color: ${({ theme }) => theme.color.yellow};
         margin-right: 5px;
 
-        @media (max-width: 400px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
             font-size: 12px;
         }
     `}
@@ -86,11 +86,11 @@ export const Span = styled.span`
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         padding: 10px;
         font-size: 16px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
         padding: 10px;
         font-size: 12px;
     }

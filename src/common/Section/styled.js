@@ -8,9 +8,9 @@ export const StyledSection = styled.section`
 export const Header = styled.div`
     display: flex;
     margin: 0 0 3px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         flex-direction: column;
     }
 `;
@@ -18,23 +18,23 @@ export const Header = styled.div`
 export const Title = styled.h2`
     margin: 0 0 3px;
     padding: 15px 30px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     flex-grow: 1;
     display: flex;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 18px;
     }
 `;
 
 export const TasksWrapper = styled.div`
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     font-style: italic;
     font-size: 16px;
     text-align: center;
     padding: 20px;
 
-    @media (max-width: 400px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
         font-size: 12px;
         padding: 10px 0;
     }

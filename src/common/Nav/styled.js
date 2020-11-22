@@ -6,7 +6,7 @@ import {
 const activeClassName = "active";
 
 export const NavigationBar = styled.div `
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     width: 100%;
     height: 8vh;
     margin: 0;
@@ -26,11 +26,11 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     &.${activeClassName} {
         border-bottom: solid 2px hsl(180, 66%, 20%);
     }
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     text-decoration: none;
     
     ${({button}) => !button && css`
-        color: hsl(180, 66%, 20%);
+        color: ${({ theme }) => theme.color.teal};
         text-decoration: none;
         font-size: 18px;
         padding: 10px 10px 5px 10px;
@@ -40,7 +40,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     &:hover {
         filter: brightness(1.5)
     }
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 16px;
     }
 `;

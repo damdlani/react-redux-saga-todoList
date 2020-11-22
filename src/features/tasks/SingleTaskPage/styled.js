@@ -4,10 +4,10 @@ export const TaskHeader = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 3px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     padding: 20px;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         padding: 15px;
     }
 `;
@@ -27,9 +27,9 @@ export const ContentInput = styled.input`
     
     &:focus {
         outline: none;
-        background-color: #eee;
+        background-color: ${({ theme }) => theme.color.pale};
     }
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 18px;
     }
 `;
@@ -37,8 +37,8 @@ export const ContentInput = styled.input`
 export const EditButton = styled.button`
     font-size: 12px;
     margin: 0 5px;
-    background-color: white;
-    color: #666;
+    background-color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.grey};
     border: none;
     transition: .3s ease;
 
@@ -56,7 +56,7 @@ export const TaskSpan = styled.span`
 `;
 
 export const TaskDetail = styled.section`
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     padding: 20px;
 `;
 
@@ -71,12 +71,12 @@ export const TextArea = styled.textarea`
     resize: none;
     margin: 10px 0;
     padding: 10px 5px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     border: none;
 
     &:focus {
         outline: none;
-        background-color: #eee;
+        background-color: ${({ theme }) => theme.color.pale};
     }
 `;
 export const DoneButton = styled.button`

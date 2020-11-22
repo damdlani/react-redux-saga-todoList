@@ -6,8 +6,8 @@ export const Container = styled.div`
   padding: 30px;
   margin: 0 auto;
   text-align: center;
-  background-color: white;
-  @media (max-width: 768px) {
+  background-color: ${({ theme }) => theme.color.white};
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: center;
     padding: 15px;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 250px;
   height: 300px;
-  @media (max-width: 400px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
         width: 200px;
         height: 240px;
     }
@@ -27,11 +27,11 @@ export const Overview = styled.div`
   font-size: 18px;
   padding: 0 30px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 20px 0;
     padding: 0 10px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
         font-size: 14px;
     }
 `;
